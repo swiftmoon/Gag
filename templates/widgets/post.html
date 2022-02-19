@@ -1,0 +1,48 @@
+
+<div class="border-bottom mt-3">
+    <div class="d-flex align-items-center">
+
+        <span class="d-inline-block cat-img cover me-1" style="background-image: url('{{ post.category.image.url }}')"></span>
+        <a class="text-dark text-decoration-none" href="{% url 'main:cat' post.category_id %}">{{ post.category.name }}</a>
+        <img class="d-inline-block cat-img cover ms-2 me-1" src="{{ post.user.photo.url }}">
+        {{ post.user.username }}
+
+    </div>
+
+    {% if post.is_image %}
+        <img class="img-fluid" src="{{ post.file.url }}">
+
+    {% elif post.is_video %}
+        <video width="100%" class="img-fluid bod" source src="{{ post.file.url }}"
+               controls="controls"></video>
+
+    {% elif post.is_audio %}
+        <audio source src="{{ post.file.url }}" controls="controls"></audio>
+    {% else %}
+        <h1 class="text-muted">Unsupoorted format</h1>
+    {% endif %}
+
+    <div class="p-3">
+        {{ post.comment }}
+    </div>
+    <div class="d-flex mb-3 ggg">
+        <li class="btn border me-2">
+            <a class="text-muted" href="{% url 'main:like' 'like' post.id %}"?return="{{ request.get_full_path }}">
+                <i class="bi bi-hand-thumbs-up"></i></a>
+        </li>
+        <li class="btn border me-2">
+            <a class="text-muted" href="{% url 'main:like' 'dislike' post.id %}" ?return="{{ request.get_full_path }}">
+                <i class="bi-hand-thumbs-down"></i></a>
+        </li>
+        <li class="btn border">
+            <a class="text-muted" href="{% url 'main:comments' post.id %}">
+                <i class="bi bi-chat-left-fill"></i></a>
+        </li>
+    </div>
+</div>
+
+
+
+
+
+

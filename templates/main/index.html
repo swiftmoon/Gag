@@ -1,0 +1,23 @@
+{% extends 'layouts/banner.html' %}
+{#{% load i18n %}#}
+{% load bootstrap_pagination i18n %}
+{% block banner_content %}
+
+    <div id="post">
+        <h1>Qiziqarli ma'lumotlar</h1>
+        {% for row in object_list %}
+            {% include 'widgets/post.html' with post=row %}
+        {% empty %}
+            <h1 class="text-center text-muted mt-2 bod">{% translate "Ushbu kategoriyada maqolalar mavjud emas" %}</h1>
+        {% endfor %}
+
+
+        <div class="mt-3 a pagi">
+            {% bootstrap_paginate page_obj %}
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

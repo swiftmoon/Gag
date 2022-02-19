@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-21 15:08+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: client/forms.py:8
+msgid "Parol Takroran"
+msgstr ""
+
+#: client/forms.py:12
+msgid "Parollar bir xil emas"
+msgstr ""
+
+#: client/forms.py:19 client/forms.py:33
+msgid "Login"
+msgstr ""
+
+#: client/forms.py:20 client/forms.py:34
+msgid "Parol"
+msgstr ""
+
+#: client/forms.py:24
+msgid "Lotin harflari, sonlar va @/./+/-/_ belgilardan iborat bo'lishi lozim"
+msgstr ""
+
+#: client/views.py:16 templates/layouts/base.html:55
+msgid "Ro'yhatdan o'tish"
+msgstr ""
+
+#: client/views.py:30
+msgid "Siz muvaffaqiyatli ro'yhatdan o'tdingiz"
+msgstr ""
+
+#: client/views.py:38 templates/layouts/base.html:58
+msgid "Tizimga kirish"
+msgstr ""
+
+#: client/views.py:51
+msgid "Xush kelibsiz, {}"
+msgstr ""
+
+#: client/views.py:53
+msgid "Login yoki parol noto'g'ri"
+msgstr ""
+
+#: client/views.py:76 templates/layouts/base.html:47
+msgid "Profil"
+msgstr ""
+
+#: client/views.py:77
+msgid "Saqlash"
+msgstr ""
+
+#: main/forms.py:9 main/models.py:26
+msgid "Izoh"
+msgstr ""
+
+#: main/forms.py:10
+msgid "Rasm"
+msgstr ""
+
+#: main/views.py:42 templates/layouts/base.html:67
+msgid "Yuklash"
+msgstr ""
+
+#: main/views.py:46
+msgid "Muvaffaqiyatli qo'shildi"
+msgstr ""
+
+#: templates/layouts/banner.html:9
+msgid "Kategoriyalar"
+msgstr ""
+
+#: templates/layouts/base.html:50
+msgid "Chiqish"
+msgstr ""
+
+#: templates/main/index.html:10
+msgid "Ushbu kategoriyada maqolalar mavjud emas"
+msgstr ""
+
+#: templates/main/postcomment_list.html:10
+msgid "Izoh qoldirish"
+msgstr ""

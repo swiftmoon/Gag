@@ -1,0 +1,130 @@
+{% if not request.GET.is_ajax %}
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE  %}
+{% get_available_languages as LANGUAGES %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<title>Django</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+        <div class="container">
+            <a class="navbar-brand" href="/">Gag</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
+
+
+                    <div class="dropdown">
+                        <div class="me-2" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            {% if user.photo %}
+                                <img src="{{ user.photo.url }}" class="user-avatar cover rounded-circle" alt="..">
+                            {% else %}
+                                <img src="{% static 'img/no-photo.jpg' %}" class="user-avatar cover rounded-circle"
+                                     alt="..">
+                            {% endif %}
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            {% if request.user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'client:profile' %}">{% translate "Profil" %}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-2" href="{% url 'client:logout' %}">{% translate "Chiqish" %}</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link {% if request.resolver_match.url_name == 'regist' %}active {% endif %}"
+                                       href="{% url 'client:regist' %}">{% translate "Ro'yhatdan o'tish" %}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'client:login' %}">{% translate "Tizimga kirish" %}</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary radius me-2" href="{% url 'main:uploadfile' %}">
+                            <i class="bi bi-arrow-down"></i>
+                            {% translate "Yuklash" %}</a>
+                    </li>
+                    {% endif %}
+
+                    <li class="nav-item dropdown ms-1">
+                        <a href="#" data-bs-toggle="dropdown" class="text-decoration-none lang-link">
+                            {% for l in LANGUAGES %}
+                                {% if l.0 == LANGUAGE_CODE %}
+                                    {{ l.1|slice:":2" }}
+                                {% endif %}
+                            {% endfor %}
+                        </a>
+                        <div class="dropdown-menu">
+                            {% for l in LANGUAGES %}
+                                <a href="/{{ l.0 }}{{ request.get_full_path|slice:"3:" }}" class="dropdown-item">
+                                    {{ l.1 }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% for m in messages %}
+            <div class="alert {{ m.tags }} alert-dismissible fade show">{{ m }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+	{% block content %}
+	{% endblock %}
+
+    {% if not request.GET.is_ajax %}
+    </div>
+
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <script>
+        setTimeout(() => {
+            document.querySelectorAll(".alert").forEach(item => {
+                item.classList.remove("show");
+            })
+
+            setTimeout(() => {
+                document.querySelectorAll(".alert").forEach(item => {
+                    item.remove()
+                })
+            }, 4000)
+        }, 4000);
+
+        {% if request.GET.modal %}
+            (new bootstrap.Modal(document.getElementById('id-login-modal'))).show()
+        {% endif %}
+    </script>
+    <script src="{% static 'vendor/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/hello.js' %}"></script>
+
+</body>
+
+</html>
+{% endif %}

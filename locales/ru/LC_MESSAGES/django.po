@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-27 10:07+0500\n"
+"PO-Revision-Date: 2021-09-15 13:27+0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Poedit 2.3\n"
+
+#: client/forms.py:8
+msgid "Parol Takroran"
+msgstr "Повторите пароль"
+
+#: client/forms.py:12
+msgid "Parollar bir xil emas"
+msgstr "Пароли не совпадают"
+
+#: client/forms.py:19 client/forms.py:34
+msgid "Login"
+msgstr "Авторизоваться"
+
+#: client/forms.py:20 client/forms.py:35
+msgid "Parol"
+msgstr "Пароль"
+
+#: client/forms.py:24
+msgid "Lotin harflari, sonlar va @/./+/-/_ belgilardan iborat bo'lishi lozim"
+msgstr ""
+"Он должен состоять из латинских букв, цифр и символов @ /. / + / - / _."
+
+#: client/views.py:16 templates/layouts/base.html:55
+msgid "Ro'yhatdan o'tish"
+msgstr "Регистрация"
+
+#: client/views.py:30
+msgid "Siz muvaffaqiyatli ro'yhatdan o'tdingiz"
+msgstr "Вы успешно зарегистрировались"
+
+#: client/views.py:38 templates/layouts/base.html:58
+msgid "Tizimga kirish"
+msgstr "Авторизоваться"
+
+#: client/views.py:51
+msgid "Xush kelibsiz, {}"
+msgstr "Добро пожаловать, {}"
+
+#: client/views.py:53
+msgid "Login yoki parol noto'g'ri"
+msgstr ""
+"Логин или\n"
+"Неверный пароль"
+
+#: client/views.py:76 templates/layouts/base.html:47
+msgid "Profil"
+msgstr "Профиль"
+
+#: client/views.py:77
+msgid "Saqlash"
+msgstr "Сохранить"
+
+#: main/forms.py:11 main/models.py:26
+msgid "Izoh"
+msgstr "Комментарие"
+
+#: main/forms.py:12
+msgid "Rasm"
+msgstr "Рисунок"
+
+#: main/views.py:42 templates/layouts/base.html:67
+msgid "Yuklash"
+msgstr "Загрузить"
+
+#: main/views.py:46
+msgid "Muvaffaqiyatli qo'shildi"
+msgstr "Успешно добавлено"
+
+#: templates/layouts/banner.html:9
+msgid "Kategoriyalar"
+msgstr "Категории"
+
+#: templates/layouts/base.html:50
+msgid "Chiqish"
+msgstr "Выход"
+
+#: templates/main/index.html:10
+msgid "Ushbu kategoriyada maqolalar mavjud emas"
+msgstr "В этой категории нет статей"
+
+#: templates/main/postcomment_list.html:10
+msgid "Izoh qoldirish"
+msgstr "Оставить комментарий"

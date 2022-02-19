@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+    <div class="row mt-4">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-header">{{ request.title }}</div>
+                <form method="POST" action="" class="mt-4" enctype="multipart/form-data">
+                    <div class="card-body">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary ms-auto">{% if request.button_title %}
+                            {{ request.button_title }}{% else %}{{ request.title }}{% endif %}
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

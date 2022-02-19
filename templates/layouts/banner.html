@@ -1,0 +1,45 @@
+{% extends 'layouts/base.html' %}
+{% load static i18n %}
+{% load bootstrap_pagination %}
+
+{% block content %}
+{% if not request.GET.is_ajax %}
+    <div class="row">
+        <div class="col-lg-2">
+            <h5 class="text-uppercase text-muted mt-3">{% translate "Kategoriyalar" %}</h5>
+            {% for row in categories %}
+                <div class="categories">
+                <a href="{% url 'main:cat' row.id %}" data-id="{{ row.id }}" data-style="background-image:url('{{ row.image.url }}')" class="d-flex text-decoration-none text-dark">
+                    <img class="me-2" src="{{ row.image.url }}" height="16px" width="16px">
+                    {{ row.name }}</a>
+                </div>
+            {% endfor %}
+            <button class="header card-body">
+                <i class="bi-alarm-fill a"></i>
+            </button>
+
+        </div>
+
+        <div class="col-lg-10">
+            <img src="{% static 'img/banner.gif' %}" class="img-fluid" alt="Banner">
+
+            <div class="row">
+                <div class="col-lg-9">
+{% endif %}
+                    {% block banner_content %}
+                    {% endblock %}
+{% if not request.GET.is_ajax %}
+                </div>
+
+                <div class="col-lg-3">
+                    <img class="mt-3 img-fluid" src="{% static 'img/small-banner.png' %}">
+                    <img class="mt-3 img-fluid" src="{% static 'img/small-banner.png' %}">
+                    <img class="mt-3 img-fluid" src="{% static 'img/small-banner.png' %}">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+{% endblock %}

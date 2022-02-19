@@ -1,0 +1,41 @@
+.html,body{
+    font-size: 16px;
+}
+.cover{
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.user-avatar{
+    width: 38px;
+    height: 38px;
+}
+
+.radius{
+    border-radius: 34px;
+}
+
+.photo{
+    width: 24px;
+    height: 24px;
+    border-radius: 34px;
+}
+.t:hover{
+    background-color: #bfd1ec;
+    border-radius: 24px;
+    font-size: 22px;
+}
+
+.lang-link{
+    font-size: 1.7rem;
+}
+
+.cat-img{
+    width: 16px;
+    height: 16px;
+}
+
+
+
+
